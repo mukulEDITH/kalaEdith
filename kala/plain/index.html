@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5a1a3a">
+<meta name="format-detection" content="telephone=no">
 <title>Kala Events – Wedding, Corporate &amp; Entertainment</title>
 <meta name="description" content="Choreography, bride &amp; groom entries, background dancers, face painting, DJ and décor. Making your celebration memorable.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -11,8 +13,10 @@
 <body>
 <nav class="nav" id="nav"><div class="wrap">
 <a class="logo" href="#top">✦ KALA EVENTS</a>
-<div class="links"><a href="#services">Services</a><a href="#choreography">Choreography</a><a href="#entry">Entries</a><a href="#facepaint">Face art</a><a href="#gallery">Gallery</a><a class="cta" href="#contact">Book now</a></div>
+<div class="links"><a href="#services">Services</a><a href="#choreography">Choreography</a><a href="#entry">Entries</a><a href="#facepaint">Face art</a><a href="#gallery">Gallery</a><a href="#instagram">Instagram</a><a class="cta" href="#contact">Book now</a></div>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span></button>
 </div></nav>
+<div class="callbar"><a class="c" href="tel:+917400744723">Call now</a><a class="w" href="https://wa.me/917400744723">WhatsApp</a></div>
 
 <header class="hero" id="top"><div class="wrap">
 <p class="script">Welcome to</p>
@@ -46,9 +50,9 @@
 <div class="scroll"><table>
 <thead><tr><th>PERFORMANCES</th><th>RATE</th><th>YOU PAY</th><th>PACKAGE</th></tr></thead>
 <tbody>
-<tr><td>5</td><td class="old">₹5,500</td><td class="price">₹4,999</td><td>Standard</td></tr>
-<tr><td>10</td><td class="old">₹5,000</td><td class="price">₹4,599</td><td>Value</td></tr>
-<tr><td>More than 10</td><td class="old">₹4,500</td><td class="price">₹3,999</td><td>Best value</td></tr>
+<tr><td data-label="Performances">5</td><td data-label="Rate" class="old">₹5,500</td><td data-label="You pay" class="price">₹4,999</td><td data-label="Package">Standard</td></tr>
+<tr><td data-label="Performances">10</td><td data-label="Rate" class="old">₹5,000</td><td data-label="You pay" class="price">₹4,599</td><td data-label="Package">Value</td></tr>
+<tr><td data-label="Performances">More than 10</td><td data-label="Rate" class="old">₹4,500</td><td data-label="You pay" class="price">₹3,999</td><td data-label="Package">Best value</td></tr>
 </tbody></table></div>
 <p class="note">Song editing: ₹299/song &nbsp;•&nbsp; 3–4 background dancers per performance: ₹5,000 extra</p>
 <p class="styles">Bollywood • Contemporary • Folk • Western • Couple choreography</p>
@@ -62,9 +66,9 @@
 <div class="scroll"><table>
 <thead><tr><th>PACKAGE</th><th>DANCERS</th><th>PRICE</th><th>INCLUDES</th></tr></thead>
 <tbody>
-<tr><td>Entry Starter</td><td>3–4</td><td class="price">₹5,000</td><td>Props + rehearsal</td></tr>
-<tr><td>Grand Entry</td><td>5–8</td><td class="price">₹8,500</td><td>Props + costumes + rehearsal</td></tr>
-<tr><td>Royal Entry</td><td>8+</td><td class="price">Custom</td><td>Full production</td></tr>
+<tr><td data-label="Package">Entry Starter</td><td data-label="Dancers">3–4</td><td data-label="Price" class="price">₹5,000</td><td data-label="Includes">Props + rehearsal</td></tr>
+<tr><td data-label="Package">Grand Entry</td><td data-label="Dancers">5–8</td><td data-label="Price" class="price">₹8,500</td><td data-label="Includes">Props + costumes + rehearsal</td></tr>
+<tr><td data-label="Package">Royal Entry</td><td data-label="Dancers">8+</td><td data-label="Price" class="price">Custom</td><td data-label="Includes">Full production</td></tr>
 </tbody></table></div>
 </div></div></section>
 
@@ -76,15 +80,25 @@
 <div class="scroll"><table>
 <thead><tr><th>SESSION</th><th>DURATION</th><th>PRICE</th></tr></thead>
 <tbody>
-<tr><td>Eye art / face painting</td><td>3 hours</td><td class="price">₹4,000</td></tr>
-<tr><td>Kids face painting</td><td>2 hours</td><td class="price">₹3,000</td></tr>
-<tr><td>Glitter art (adults)</td><td>3 hours</td><td class="price">₹4,000</td></tr>
+<tr><td data-label="Session">Eye art / face painting</td><td data-label="Duration">3 hours</td><td data-label="Price" class="price">₹4,000</td></tr>
+<tr><td data-label="Session">Kids face painting</td><td data-label="Duration">2 hours</td><td data-label="Price" class="price">₹3,000</td></tr>
+<tr><td data-label="Session">Glitter art (adults)</td><td data-label="Duration">3 hours</td><td data-label="Price" class="price">₹4,000</td></tr>
 </tbody></table></div>
 </div></div></section>
 
 <section id="gallery"><div class="wrap">
 <div class="head"><p class="script">Moments we made</p><h2>Gallery</h2></div>
-<div class="gallery"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<div class="gallery"><div class="g" role="img" aria-label="Kala Events celebration 1" data-src="images/gallery-1.jpg"></div><div class="g" role="img" aria-label="Kala Events celebration 2" data-src="images/gallery-2.jpg"></div><div class="g" role="img" aria-label="Kala Events celebration 3" data-src="images/gallery-3.jpg"></div><div class="g" role="img" aria-label="Kala Events celebration 4" data-src="images/gallery-4.jpg"></div><div class="g" role="img" aria-label="Kala Events celebration 5" data-src="images/gallery-5.jpg"></div><div class="g" role="img" aria-label="Kala Events celebration 6" data-src="images/gallery-6.jpg"></div></div>
+</div></section>
+
+<section class="alt" id="instagram"><div class="wrap">
+<div class="head"><p class="script">Follow along</p><h2>On Instagram</h2><p>Reels and posts from our latest celebrations.</p></div>
+<div class="ig-profile">
+<img src="images/instagram-qr.png" alt="QR code for @kalaa_events_ on Instagram" loading="lazy">
+<div><h3>@kalaa_events_</h3><p>Scan the code or tap the button to follow us.</p><a class="btn ig" href="https://www.instagram.com/kalaa_events_/" target="_blank" rel="noopener">Follow on Instagram</a></div>
+</div>
+<div class="ig-grid" id="igGrid"></div>
+<div class="ig-more" id="igMore" hidden><button class="btn outline" id="igShuffle" type="button">Show different reels</button></div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
@@ -94,7 +108,7 @@
 <div><h3>Chhavi Shrivastava</h3><a href="tel:+917400744723">7400744723</a></div>
 <div><h3>Mukul Kaushal</h3><a href="tel:+918319662377">8319662377</a></div>
 </div>
-<a class="btn" href="https://wa.me/917400744723">Message on WhatsApp</a>
+<div class="btns"><a class="btn" href="https://wa.me/917400744723">Message on WhatsApp</a><a class="btn ghost" href="https://www.instagram.com/kalaa_events_/" target="_blank" rel="noopener">Instagram</a></div>
 </div></section>
 
 <footer>KALA EVENTS • Making Your Celebration Memorable</footer>
