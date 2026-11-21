@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react'
 
 // ---- Edit your content here ----
-const PHONES = { chhavi: ['7400744723', '8319662377'], mukul: ['8319662377'] }
+const PHONES = { chhavi: ['7400744723'], mukul: ['8319662377'] }
+
+// Instagram: open a reel/post > 3 dots > Copy link, then paste links below.
+// Your Instagram account must be public for embeds to work.
+const IG_PROFILE = 'https://www.instagram.com/kalaa_events_/'
+const IG_POSTS = [
+  // 'https://www.instagram.com/reel/XXXXXXXXXXX/',
+  // 'https://www.instagram.com/p/XXXXXXXXXXX/',
+]
+const IG_COUNT = 3 // how many to show at once
 
 const SERVICES = [
   ['Choreography', 'Solo, group and couple dance performances for all occasions.'],
@@ -42,7 +51,55 @@ const FACE = {
   ],
 }
 
+const toEmbed = url => {
+  const m = String(url).match(/instagram\.com\/(p|reel|tv)\/([\w-]+)/i)
+  return m ? `https://www.instagram.com/${m[1].toLowerCase()}/${m[2]}/embed` : null
+}
+const IG_EMBEDS = IG_POSTS.map(toEmbed).filter(Boolean)
+const pickRandom = () => {
+  const a = [...IG_EMBEDS]
+  for (let i = a.length - 1; i > 0; i--) {
+    const k = Math.floor(Math.random() * (i + 1));
+    [a[i], a[k]] = [a[k], a[i]]
+  }
+  return a.slice(0, IG_COUNT)
+}
+
 // ---- Components ----
+
+function Instagram() {
+  const [items, setItems] = useState(pickRandom)
+  return (
+    <section className="alt" id="instagram">
+      <div className="wrap">
+        <div className="head"><p className="script">Follow along</p><h2>On Instagram</h2><p>Reels and posts from our latest celebrations.</p></div>
+        <div className="ig-profile">
+          <img src="/images/instagram-qr.png" alt="QR code for @kalaa_events_ on Instagram" loading="lazy" />
+          <div>
+            <h3>@kalaa_events_</h3>
+            <p>Scan the code or tap the button to follow us.</p>
+            <a className="btn ig" href={IG_PROFILE} target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+          </div>
+        </div>
+        {items.length > 0 && (
+          <div className="ig-grid">
+            {items.map(src => (
+              <div className="ig-card" key={src}>
+                <iframe src={src} title="Instagram reel or post by Kala Events" loading="lazy" scrolling="no" />
+              </div>
+            ))}
+          </div>
+        )}
+        {IG_EMBEDS.length > IG_COUNT && (
+          <div className="ig-more">
+            <button className="btn outline" type="button" onClick={() => setItems(pickRandom())}>Show different reels</button>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
 function Table({ data, priceCol, oldCol }) {
   return (
     <div className="scroll">
@@ -114,7 +171,7 @@ export default function App() {
           <a className="logo" href="#top">✦ KALA EVENTS</a>
           <div className="links" onClick={() => setOpen(false)}>
             <a href="#services">Services</a><a href="#choreography">Choreography</a>
-            <a href="#entry">Entries</a><a href="#facepaint">Face art</a><a href="#gallery">Gallery</a>
+            <a href="#entry">Entries</a><a href="#facepaint">Face art</a><a href="#gallery">Gallery</a><a href="#instagram">Instagram</a>
             <a className="cta" href="#contact">Book now</a>
           </div>
           <button className="menu-btn" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}><span /></button>
@@ -173,15 +230,20 @@ export default function App() {
         </div>
       </section>
 
+      <Instagram />
+
       <section className="contact" id="contact">
         <div className="wrap">
           <p className="script">Let's celebrate</p><h2>Get in touch</h2>
           <p>Available for weddings, sangeet, corporate events, birthdays and fairs.</p>
           <div className="people">
-            <div><h3>Chhavi</h3>{PHONES.chhavi.map(p => <a key={p} href={`tel:+91${p}`}>{p}</a>)}</div>
-            <div><h3>Mukul</h3>{PHONES.mukul.map(p => <a key={p} href={`tel:+91${p}`}>{p}</a>)}</div>
+            <div><h3>Chhavi Shrivastava</h3>{PHONES.chhavi.map(p => <a key={p} href={`tel:+91${p}`}>{p}</a>)}</div>
+            <div><h3>Mukul Kaushal</h3>{PHONES.mukul.map(p => <a key={p} href={`tel:+91${p}`}>{p}</a>)}</div>
           </div>
-          <a className="btn" href={`https://wa.me/91${PHONES.chhavi[0]}`}>Message on WhatsApp</a>
+          <div className="btns">
+            <a className="btn" href={`https://wa.me/91${PHONES.chhavi[0]}`}>Message on WhatsApp</a>
+            <a className="btn ghost" href={IG_PROFILE} target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
         </div>
       </section>
 
