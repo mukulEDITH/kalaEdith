@@ -139,3 +139,23 @@ footer{background:#2a0f1e;color:#b79fae;text-align:center;padding:26px 0;font-si
 .gallery>div:not(.g):nth-child(4){background-image:url(/images/gallery-4.jpg)}
 .gallery>div:not(.g):nth-child(5){background-image:url(/images/gallery-5.jpg)}
 .gallery>div:not(.g):nth-child(6){background-image:url(/images/gallery-6.jpg)}
+
+/* ===== Instagram ===== */
+.btn.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);color:#fff}
+.btn.ig:hover{filter:brightness(1.08);background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af)}
+.btn.outline{background:transparent;color:var(--maroon);border:1px solid var(--maroon);cursor:pointer;font-family:inherit;font-size:1rem}
+.btn.outline:hover{background:var(--maroon);color:#fff}
+.ig-profile{display:flex;align-items:center;justify-content:center;gap:34px;max-width:660px;margin:0 auto 44px;padding:24px 28px;background:var(--ivory);border:1px solid var(--line);border-radius:14px;text-align:left}
+.ig-profile img{width:150px;height:auto;flex:none;border-radius:8px;background:#fff}
+.ig-profile h3{font-size:2rem;color:var(--maroon)}
+.ig-profile p{margin:6px 0 18px;color:var(--muted)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;justify-items:center}
+.ig-card{width:100%;max-width:360px;height:640px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.ig-card iframe{display:block;width:100%;height:100%;border:0}
+.ig-more{text-align:center;margin-top:28px}
+@media(max-width:1000px){.links{gap:16px}.links a{font-size:.88rem}}
+@media(max-width:900px){
+ .ig-grid{display:flex;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:14px;padding:4px 22px 14px;margin:0 -22px}
+ .ig-card{flex:0 0 min(86%,340px);scroll-snap-align:center}
+}
+@media(max-width:600px){.ig-profile{flex-direction:column;text-align:center;gap:18px;padding:24px 18px}.ig-profile img{width:170px}}
