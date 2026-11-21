@@ -241,7 +241,7 @@ export default function App() {
             <div><h3>Mukul Kaushal</h3>{PHONES.mukul.map(p => <a key={p} href={`tel:+91${p}`}>{p}</a>)}</div>
           </div>
           <div className="btns">
-            <a className="btn" href={`https://wa.me/91${PHONES.chhavi[0]}`}>Message on WhatsApp</a>
+            <a className="btn" href={`https://wa.me/91${PHONES.mukul[0]}`}>Message on WhatsApp</a>
             <a className="btn ghost" href={IG_PROFILE} target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
