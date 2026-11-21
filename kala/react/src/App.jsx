@@ -189,7 +189,7 @@ export default function App() {
           <p className="types">WEDDING • CORPORATE • ENTERTAINMENT</p>
           <p className="tag">Making Your Celebration Memorable</p>
           <div className="btns">
-            <a className="btn" href={`tel:+91${PHONES.chhavi[0]}`}>Call Chhavi</a>
+            <a className="btn" href={`tel:+91${PHONES.chhavi[0]}`}>Call Us</a>
             <a className="btn ghost" href="#choreography">View pricing</a>
           </div>
         </div>
