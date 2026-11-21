@@ -179,7 +179,7 @@ export default function App() {
       </nav>
       <div className="callbar">
         <a className="c" href={`tel:+91${PHONES.chhavi[0]}`}>Call now</a>
-        <a className="w" href={`https://wa.me/91${PHONES.chhavi[0]}`}>WhatsApp</a>
+        <a className="w" href={`https://wa.me/91${PHONES.mukul[0]}`}>WhatsApp</a>
       </div>
 
       <header className="hero" id="top">
